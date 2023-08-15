@@ -1,3 +1,4 @@
-# This repos is created to analyze dataset Superstores Sales
-# dataset link: https://www.kaggle.com/datasets/rohitsahoo/sales-forecasting
-# In this repos, I'll explore and analyze this dataset
+# Superstore Sales dataset EDA
+This repos is created to analyze dataset Superstores Sales
+Dataset link: https://www.kaggle.com/datasets/rohitsahoo/sales-forecasting
+In this repos, I'll explore and analyze this dataset
