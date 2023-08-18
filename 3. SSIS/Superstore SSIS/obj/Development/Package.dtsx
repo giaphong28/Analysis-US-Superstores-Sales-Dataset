@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{AA92A482-812B-44FA-9696-0317A2987FFC}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{57B4EDAC-2501-43E5-ACB8-08C5B55E1D57}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -300,15 +300,6 @@
                       cachedSortKeyPosition="3"
                       externalMetadataColumnId="Package\Data Flow Task\Dim_Customer.Inputs[ADO NET Destination Input].ExternalColumns[Segment]"
                       lineageId="Package\Data Flow Task\Sort_customer.Outputs[Sort Output].Columns[Segment]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Dim_Customer.Inputs[ADO NET Destination Input].Columns[Postal Code]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Postal Code"
-                      cachedSortKeyPosition="7"
-                      externalMetadataColumnId="Package\Data Flow Task\Dim_Customer.Inputs[ADO NET Destination Input].ExternalColumns[Postal Code]"
-                      lineageId="Package\Data Flow Task\Sort_customer.Outputs[Sort Output].Columns[Postal Code]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -327,11 +318,6 @@
                       dataType="wstr"
                       length="50"
                       name="Segment" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Dim_Customer.Inputs[ADO NET Destination Input].ExternalColumns[Postal Code]"
-                      dataType="wstr"
-                      length="50"
-                      name="Postal Code" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -374,7 +360,7 @@
                   description="The Destination database table name."
                   expressionType="Notify"
                   name="TableOrViewName"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"Dim_Order"</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."Dim_Order"</property>
                 <property
                   dataType="System.Int32"
                   description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
@@ -410,12 +396,21 @@
                   name="ADO NET Destination Input">
                   <inputColumns>
                     <inputColumn
+                      refId="Package\Data Flow Task\Dim_Order.Inputs[ADO NET Destination Input].Columns[Row ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Row ID"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Data Flow Task\Dim_Order.Inputs[ADO NET Destination Input].ExternalColumns[Row ID]"
+                      lineageId="Package\Data Flow Task\Sort_order.Outputs[Sort Output].Columns[Row ID]" />
+                    <inputColumn
                       refId="Package\Data Flow Task\Dim_Order.Inputs[ADO NET Destination Input].Columns[Order ID]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Order ID"
-                      cachedSortKeyPosition="1"
+                      cachedSortKeyPosition="2"
                       externalMetadataColumnId="Package\Data Flow Task\Dim_Order.Inputs[ADO NET Destination Input].ExternalColumns[Order ID]"
                       lineageId="Package\Data Flow Task\Sort_order.Outputs[Sort Output].Columns[Order ID]" />
                     <inputColumn
@@ -424,7 +419,7 @@
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Order Date"
-                      cachedSortKeyPosition="2"
+                      cachedSortKeyPosition="3"
                       externalMetadataColumnId="Package\Data Flow Task\Dim_Order.Inputs[ADO NET Destination Input].ExternalColumns[Order Date]"
                       lineageId="Package\Data Flow Task\Sort_order.Outputs[Sort Output].Columns[Order Date]" />
                     <inputColumn
@@ -433,7 +428,7 @@
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Ship Date"
-                      cachedSortKeyPosition="3"
+                      cachedSortKeyPosition="4"
                       externalMetadataColumnId="Package\Data Flow Task\Dim_Order.Inputs[ADO NET Destination Input].ExternalColumns[Ship Date]"
                       lineageId="Package\Data Flow Task\Sort_order.Outputs[Sort Output].Columns[Ship Date]" />
                     <inputColumn
@@ -442,12 +437,17 @@
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Ship Mode"
-                      cachedSortKeyPosition="4"
+                      cachedSortKeyPosition="5"
                       externalMetadataColumnId="Package\Data Flow Task\Dim_Order.Inputs[ADO NET Destination Input].ExternalColumns[Ship Mode]"
                       lineageId="Package\Data Flow Task\Sort_order.Outputs[Sort Output].Columns[Ship Mode]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Dim_Order.Inputs[ADO NET Destination Input].ExternalColumns[Row ID]"
+                      dataType="wstr"
+                      length="50"
+                      name="Row ID" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Dim_Order.Inputs[ADO NET Destination Input].ExternalColumns[Order ID]"
                       dataType="wstr"
@@ -832,12 +832,21 @@
                   name="ADO NET Destination Input">
                   <inputColumns>
                     <inputColumn
+                      refId="Package\Data Flow Task\Fact_Cus.Inputs[ADO NET Destination Input].Columns[Row ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Row ID"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Data Flow Task\Fact_Cus.Inputs[ADO NET Destination Input].ExternalColumns[Row ID]"
+                      lineageId="Package\Data Flow Task\Sort_Fact.Outputs[Sort Output].Columns[Row ID]" />
+                    <inputColumn
                       refId="Package\Data Flow Task\Fact_Cus.Inputs[ADO NET Destination Input].Columns[Order ID]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Order ID"
-                      cachedSortKeyPosition="1"
+                      cachedSortKeyPosition="2"
                       externalMetadataColumnId="Package\Data Flow Task\Fact_Cus.Inputs[ADO NET Destination Input].ExternalColumns[Order ID]"
                       lineageId="Package\Data Flow Task\Sort_Fact.Outputs[Sort Output].Columns[Order ID]" />
                     <inputColumn
@@ -846,16 +855,34 @@
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Customer ID"
-                      cachedSortKeyPosition="2"
+                      cachedSortKeyPosition="3"
                       externalMetadataColumnId="Package\Data Flow Task\Fact_Cus.Inputs[ADO NET Destination Input].ExternalColumns[Customer ID]"
                       lineageId="Package\Data Flow Task\Sort_Fact.Outputs[Sort Output].Columns[Customer ID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Fact_Cus.Inputs[ADO NET Destination Input].Columns[Customer Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Customer Name"
+                      cachedSortKeyPosition="4"
+                      externalMetadataColumnId="Package\Data Flow Task\Fact_Cus.Inputs[ADO NET Destination Input].ExternalColumns[Customer Name]"
+                      lineageId="Package\Data Flow Task\Sort_Fact.Outputs[Sort Output].Columns[Customer Name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Fact_Cus.Inputs[ADO NET Destination Input].Columns[City]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="City"
+                      cachedSortKeyPosition="6"
+                      externalMetadataColumnId="Package\Data Flow Task\Fact_Cus.Inputs[ADO NET Destination Input].ExternalColumns[City]"
+                      lineageId="Package\Data Flow Task\Sort_Fact.Outputs[Sort Output].Columns[City]" />
                     <inputColumn
                       refId="Package\Data Flow Task\Fact_Cus.Inputs[ADO NET Destination Input].Columns[Postal Code]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Postal Code"
-                      cachedSortKeyPosition="7"
+                      cachedSortKeyPosition="5"
                       externalMetadataColumnId="Package\Data Flow Task\Fact_Cus.Inputs[ADO NET Destination Input].ExternalColumns[Postal Code]"
                       lineageId="Package\Data Flow Task\Sort_Fact.Outputs[Sort Output].Columns[Postal Code]" />
                     <inputColumn
@@ -864,19 +891,33 @@
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Product ID"
-                      cachedSortKeyPosition="4"
+                      cachedSortKeyPosition="7"
                       externalMetadataColumnId="Package\Data Flow Task\Fact_Cus.Inputs[ADO NET Destination Input].ExternalColumns[Product ID]"
                       lineageId="Package\Data Flow Task\Sort_Fact.Outputs[Sort Output].Columns[Product ID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Fact_Cus.Inputs[ADO NET Destination Input].Columns[Product Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Product Name"
+                      cachedSortKeyPosition="8"
+                      externalMetadataColumnId="Package\Data Flow Task\Fact_Cus.Inputs[ADO NET Destination Input].ExternalColumns[Product Name]"
+                      lineageId="Package\Data Flow Task\Sort_Fact.Outputs[Sort Output].Columns[Product Name]" />
                     <inputColumn
                       refId="Package\Data Flow Task\Fact_Cus.Inputs[ADO NET Destination Input].Columns[Sales]"
                       cachedDataType="r4"
                       cachedName="Sales"
-                      cachedSortKeyPosition="6"
+                      cachedSortKeyPosition="9"
                       externalMetadataColumnId="Package\Data Flow Task\Fact_Cus.Inputs[ADO NET Destination Input].ExternalColumns[Sales]"
                       lineageId="Package\Data Flow Task\Sort_Fact.Outputs[Sort Output].Columns[Sales]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Fact_Cus.Inputs[ADO NET Destination Input].ExternalColumns[Row ID]"
+                      dataType="wstr"
+                      length="50"
+                      name="Row ID" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Fact_Cus.Inputs[ADO NET Destination Input].ExternalColumns[Order ID]"
                       dataType="wstr"
@@ -888,6 +929,16 @@
                       length="50"
                       name="Customer ID" />
                     <externalMetadataColumn
+                      refId="Package\Data Flow Task\Fact_Cus.Inputs[ADO NET Destination Input].ExternalColumns[Customer Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="Customer Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Fact_Cus.Inputs[ADO NET Destination Input].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="50"
+                      name="City" />
+                    <externalMetadataColumn
                       refId="Package\Data Flow Task\Fact_Cus.Inputs[ADO NET Destination Input].ExternalColumns[Postal Code]"
                       dataType="wstr"
                       length="50"
@@ -897,6 +948,11 @@
                       dataType="wstr"
                       length="50"
                       name="Product ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Fact_Cus.Inputs[ADO NET Destination Input].ExternalColumns[Product Name]"
+                      dataType="wstr"
+                      length="500"
+                      name="Product Name" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Fact_Cus.Inputs[ADO NET Destination Input].ExternalColumns[Sales]"
                       dataType="r4"
@@ -1735,7 +1791,7 @@
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">4</property>
+                          name="NewSortKeyPosition">0</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -1753,7 +1809,7 @@
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">5</property>
+                          name="NewSortKeyPosition">0</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -1771,7 +1827,7 @@
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">6</property>
+                          name="NewSortKeyPosition">0</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -1789,7 +1845,7 @@
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">7</property>
+                          name="NewSortKeyPosition">0</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -1807,7 +1863,7 @@
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">8</property>
+                          name="NewSortKeyPosition">0</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -2037,8 +2093,7 @@
                       dataType="str"
                       length="50"
                       lineageId="Package\Data Flow Task\Sort_customer.Outputs[Sort Output].Columns[Country]"
-                      name="Country"
-                      sortKeyPosition="4">
+                      name="Country">
                       <properties>
                         <property
                           containsID="true"
@@ -2053,8 +2108,7 @@
                       dataType="str"
                       length="50"
                       lineageId="Package\Data Flow Task\Sort_customer.Outputs[Sort Output].Columns[City]"
-                      name="City"
-                      sortKeyPosition="5">
+                      name="City">
                       <properties>
                         <property
                           containsID="true"
@@ -2069,8 +2123,7 @@
                       dataType="str"
                       length="50"
                       lineageId="Package\Data Flow Task\Sort_customer.Outputs[Sort Output].Columns[State]"
-                      name="State"
-                      sortKeyPosition="6">
+                      name="State">
                       <properties>
                         <property
                           containsID="true"
@@ -2085,8 +2138,7 @@
                       dataType="str"
                       length="50"
                       lineageId="Package\Data Flow Task\Sort_customer.Outputs[Sort Output].Columns[Postal Code]"
-                      name="Postal Code"
-                      sortKeyPosition="7">
+                      name="Postal Code">
                       <properties>
                         <property
                           containsID="true"
@@ -2101,8 +2153,7 @@
                       dataType="str"
                       length="50"
                       lineageId="Package\Data Flow Task\Sort_customer.Outputs[Sort Output].Columns[Region]"
-                      name="Region"
-                      sortKeyPosition="8">
+                      name="Region">
                       <properties>
                         <property
                           containsID="true"
@@ -2227,7 +2278,7 @@
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
+                          name="NewSortKeyPosition">1</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -2245,7 +2296,7 @@
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">1</property>
+                          name="NewSortKeyPosition">2</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -2317,7 +2368,7 @@
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">2</property>
+                          name="NewSortKeyPosition">3</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -2335,7 +2386,7 @@
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">3</property>
+                          name="NewSortKeyPosition">4</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -2389,7 +2440,7 @@
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
+                          name="NewSortKeyPosition">6</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -2425,7 +2476,7 @@
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">7</property>
+                          name="NewSortKeyPosition">5</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -2461,7 +2512,7 @@
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">4</property>
+                          name="NewSortKeyPosition">7</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -2515,7 +2566,7 @@
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">5</property>
+                          name="NewSortKeyPosition">8</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -2531,7 +2582,7 @@
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">6</property>
+                          name="NewSortKeyPosition">9</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
@@ -2550,7 +2601,8 @@
                       dataType="str"
                       length="50"
                       lineageId="Package\Data Flow Task\Sort_Fact.Outputs[Sort Output].Columns[Row ID]"
-                      name="Row ID">
+                      name="Row ID"
+                      sortKeyPosition="1">
                       <properties>
                         <property
                           containsID="true"
@@ -2566,7 +2618,7 @@
                       length="50"
                       lineageId="Package\Data Flow Task\Sort_Fact.Outputs[Sort Output].Columns[Order ID]"
                       name="Order ID"
-                      sortKeyPosition="1">
+                      sortKeyPosition="2">
                       <properties>
                         <property
                           containsID="true"
@@ -2627,7 +2679,7 @@
                       length="50"
                       lineageId="Package\Data Flow Task\Sort_Fact.Outputs[Sort Output].Columns[Customer ID]"
                       name="Customer ID"
-                      sortKeyPosition="2">
+                      sortKeyPosition="3">
                       <properties>
                         <property
                           containsID="true"
@@ -2643,7 +2695,7 @@
                       length="50"
                       lineageId="Package\Data Flow Task\Sort_Fact.Outputs[Sort Output].Columns[Customer Name]"
                       name="Customer Name"
-                      sortKeyPosition="3">
+                      sortKeyPosition="4">
                       <properties>
                         <property
                           containsID="true"
@@ -2688,7 +2740,8 @@
                       dataType="str"
                       length="50"
                       lineageId="Package\Data Flow Task\Sort_Fact.Outputs[Sort Output].Columns[City]"
-                      name="City">
+                      name="City"
+                      sortKeyPosition="6">
                       <properties>
                         <property
                           containsID="true"
@@ -2719,7 +2772,7 @@
                       length="50"
                       lineageId="Package\Data Flow Task\Sort_Fact.Outputs[Sort Output].Columns[Postal Code]"
                       name="Postal Code"
-                      sortKeyPosition="7">
+                      sortKeyPosition="5">
                       <properties>
                         <property
                           containsID="true"
@@ -2750,7 +2803,7 @@
                       length="50"
                       lineageId="Package\Data Flow Task\Sort_Fact.Outputs[Sort Output].Columns[Product ID]"
                       name="Product ID"
-                      sortKeyPosition="4">
+                      sortKeyPosition="7">
                       <properties>
                         <property
                           containsID="true"
@@ -2796,7 +2849,7 @@
                       length="500"
                       lineageId="Package\Data Flow Task\Sort_Fact.Outputs[Sort Output].Columns[Product Name]"
                       name="Product Name"
-                      sortKeyPosition="5">
+                      sortKeyPosition="8">
                       <properties>
                         <property
                           containsID="true"
@@ -2810,7 +2863,7 @@
                       dataType="r4"
                       lineageId="Package\Data Flow Task\Sort_Fact.Outputs[Sort Output].Columns[Sales]"
                       name="Sales"
-                      sortKeyPosition="6">
+                      sortKeyPosition="9">
                       <properties>
                         <property
                           containsID="true"
@@ -2862,7 +2915,7 @@
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
+                          name="NewSortKeyPosition">1</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -2880,7 +2933,7 @@
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">1</property>
+                          name="NewSortKeyPosition">2</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -2898,7 +2951,7 @@
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">2</property>
+                          name="NewSortKeyPosition">3</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -2916,7 +2969,7 @@
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">3</property>
+                          name="NewSortKeyPosition">4</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -2934,7 +2987,7 @@
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">4</property>
+                          name="NewSortKeyPosition">5</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -3185,7 +3238,8 @@
                       dataType="str"
                       length="50"
                       lineageId="Package\Data Flow Task\Sort_order.Outputs[Sort Output].Columns[Row ID]"
-                      name="Row ID">
+                      name="Row ID"
+                      sortKeyPosition="1">
                       <properties>
                         <property
                           containsID="true"
@@ -3201,7 +3255,7 @@
                       length="50"
                       lineageId="Package\Data Flow Task\Sort_order.Outputs[Sort Output].Columns[Order ID]"
                       name="Order ID"
-                      sortKeyPosition="1">
+                      sortKeyPosition="2">
                       <properties>
                         <property
                           containsID="true"
@@ -3217,7 +3271,7 @@
                       length="50"
                       lineageId="Package\Data Flow Task\Sort_order.Outputs[Sort Output].Columns[Order Date]"
                       name="Order Date"
-                      sortKeyPosition="2">
+                      sortKeyPosition="3">
                       <properties>
                         <property
                           containsID="true"
@@ -3233,7 +3287,7 @@
                       length="50"
                       lineageId="Package\Data Flow Task\Sort_order.Outputs[Sort Output].Columns[Ship Date]"
                       name="Ship Date"
-                      sortKeyPosition="3">
+                      sortKeyPosition="4">
                       <properties>
                         <property
                           containsID="true"
@@ -3249,7 +3303,7 @@
                       length="50"
                       lineageId="Package\Data Flow Task\Sort_order.Outputs[Sort Output].Columns[Ship Mode]"
                       name="Ship Mode"
-                      sortKeyPosition="4">
+                      sortKeyPosition="5">
                       <properties>
                         <property
                           containsID="true"
@@ -4100,7 +4154,7 @@
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the Sort transformation removes rows with duplicate sort values."
-                  name="EliminateDuplicates">false</property>
+                  name="EliminateDuplicates">true</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the maximum number of threads to use for sorting."
@@ -4760,24 +4814,24 @@
               startId="Package\Data Flow Task\Sort_Fact.Outputs[Sort Output]" />
             <path
               refId="Package\Data Flow Task.Paths[Sort Output1]"
-              endId="Package\Data Flow Task\Dim_Order.Inputs[ADO NET Destination Input]"
-              name="Sort Output"
-              startId="Package\Data Flow Task\Sort_order.Outputs[Sort Output]" />
-            <path
-              refId="Package\Data Flow Task.Paths[Sort Output2]"
               endId="Package\Data Flow Task\Dim_Customer.Inputs[ADO NET Destination Input]"
               name="Sort Output"
               startId="Package\Data Flow Task\Sort_customer.Outputs[Sort Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Sort Output3]"
+              refId="Package\Data Flow Task.Paths[Sort Output2]"
               endId="Package\Data Flow Task\Dim_PostalCode.Inputs[ADO NET Destination Input]"
               name="Sort Output"
               startId="Package\Data Flow Task\Sort_PostalCode.Outputs[Sort Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Sort Output4]"
+              refId="Package\Data Flow Task.Paths[Sort Output3]"
               endId="Package\Data Flow Task\Dim_Product.Inputs[ADO NET Destination Input]"
               name="Sort Output"
               startId="Package\Data Flow Task\Sort_product.Outputs[Sort Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Sort Output4]"
+              endId="Package\Data Flow Task\Dim_Order.Inputs[ADO NET Destination Input]"
+              name="Sort Output"
+              startId="Package\Data Flow Task\Sort_order.Outputs[Sort Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -4865,39 +4919,91 @@
           Id="Package\Data Flow Task\Multicast"
           TopLeft="325.00000069184,95.5882352103309" />
         <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\Data Flow Task\Dim_Order"
-          TopLeft="755.000001607197,19.8823529237488" />
-        <NodeLayout
-          Size="123.2,41.6"
-          Id="Package\Data Flow Task\Sort_Fact"
-          TopLeft="300.000000638621,223.294117451333" />
-        <NodeLayout
           Size="155.2,41.6"
           Id="Package\Data Flow Task\Sort_PostalCode"
           TopLeft="547.857144023387,191.941176302344" />
-        <NodeLayout
-          Size="120.8,41.6"
-          Id="Package\Data Flow Task\Fact_Cus"
-          TopLeft="301.428572070234,295.941176211184" />
-        <NodeLayout
-          Size="128,41.6"
-          Id="Package\Data Flow Task\Sort_order"
-          TopLeft="543.57142972855,24.4705882138447" />
-        <NodeLayout
-          Size="148,41.6"
-          Id="Package\Data Flow Task\Dim_Customer"
-          TopLeft="755.000001607198,113.941176370714" />
         <NodeLayout
           Size="150.4,41.6"
           Id="Package\Data Flow Task\Flat File Source"
           TopLeft="60.7142858435305,91.7647058019176" />
         <NodeLayout
+          Size="123.2,41.6"
+          Id="Package\Data Flow Task\Sort_Fact"
+          TopLeft="300.000000638621,223.294117451333" />
+        <NodeLayout
+          Size="138.4,41.6"
+          Id="Package\Data Flow Task\Dim_Product"
+          TopLeft="752.857144459778,276.823529169118" />
+        <NodeLayout
+          Size="139.2,41.6"
+          Id="Package\Data Flow Task\Sort_product"
+          TopLeft="552.857144034031,276.823529169118" />
+        <NodeLayout
+          Size="128,41.6"
+          Id="Package\Data Flow Task\Sort_order"
+          TopLeft="543.57142972855,24.4705882138447" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Data Flow Task\Fact_Cus"
+          TopLeft="301.428572070234,295.941176211184" />
+        <NodeLayout
           Size="146.4,41.6"
           Id="Package\Data Flow Task\Sort_customer"
           TopLeft="549.285715455,112.411764607349" />
+        <NodeLayout
+          Size="154.4,41.6"
+          Id="Package\Data Flow Task\Dim_PostalCode"
+          TopLeft="750.714287312359,193.47058806571" />
+        <NodeLayout
+          Size="148,41.6"
+          Id="Package\Data Flow Task\Dim_Customer"
+          TopLeft="755.000001607198,113.941176370714" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Sort Output3]"
+          TopLeft="692.057144034031,297.623529169118">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="60.8000004257473,0"
+              Start="0,0"
+              End="53.3000004257473,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="53.3000004257473,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Sort Output2]"
+          TopLeft="703.057144023387,213.505882184027">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="47.6571432889722,0"
+              Start="0,0"
+              End="40.1571432889722,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="40.1571432889722,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Sort Output1]"
           TopLeft="695.685715455,133.976470489031">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4910,28 +5016,6 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="51.8142861521977,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Sort Output1]"
-          TopLeft="671.57142972855,42.9764705687968">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="83.4285718786469,0"
-              Start="0,0"
-              End="75.9285718786469,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="75.9285718786469,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4954,6 +5038,40 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,23.5470587598513" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Multicast Output 5]"
+          TopLeft="432.142857935052,137.188235210331">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="190.314286098979,139.635293958787"
+              Start="0,0"
+              End="190.314286098979,132.135293958787">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,113.9941175254" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,113.9941175254"
+                    Point2="0,117.9941175254"
+                    Point3="4,117.9941175254" />
+                  <mssgle:LineSegment
+                    End="186.314286098979,117.9941175254" />
+                  <mssgle:CubicBezierSegment
+                    Point1="186.314286098979,117.9941175254"
+                    Point2="190.314286098979,117.9941175254"
+                    Point3="190.314286098979,121.9941175254" />
+                  <mssgle:LineSegment
+                    End="190.314286098979,132.135293958787" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5109,87 +5227,23 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="154.4,41.6"
-          Id="Package\Data Flow Task\Dim_PostalCode"
-          TopLeft="750.714287312359,193.47058806571" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Sort Output3]"
-          TopLeft="703.057144023387,213.505882184027">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="47.6571432889722,0"
-              Start="0,0"
-              End="40.1571432889722,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="40.1571432889722,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="139.2,41.6"
-          Id="Package\Data Flow Task\Sort_product"
-          TopLeft="552.857144034031,276.823529169118" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Multicast Output 5]"
-          TopLeft="432.142857935052,137.188235210331">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="190.314286098979,139.635293958787"
-              Start="0,0"
-              End="190.314286098979,132.135293958787">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,113.9941175254" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,113.9941175254"
-                    Point2="0,117.9941175254"
-                    Point3="4,117.9941175254" />
-                  <mssgle:LineSegment
-                    End="186.314286098979,117.9941175254" />
-                  <mssgle:CubicBezierSegment
-                    Point1="186.314286098979,117.9941175254"
-                    Point2="190.314286098979,117.9941175254"
-                    Point3="190.314286098979,121.9941175254" />
-                  <mssgle:LineSegment
-                    End="190.314286098979,132.135293958787" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="138.4,41.6"
-          Id="Package\Data Flow Task\Dim_Product"
-          TopLeft="752.857144459778,276.823529169118" />
+          Size="129.6,41.6"
+          Id="Package\Data Flow Task\Dim_Order"
+          TopLeft="742.857144438491,21.4117646871141" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Sort Output4]"
-          TopLeft="692.057144034031,297.623529169118">
+          TopLeft="671.57142972855,43.7411764504794">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="60.8000004257473,0"
+              EndConnector="71.2857147099407,0"
               Start="0,0"
-              End="53.3000004257473,0">
+              End="63.7857147099407,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="53.3000004257473,0" />
+                    End="63.7857147099407,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5202,14 +5256,6 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Dim_Order">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\Fact_Cus">
     <Properties>
       <Property>
@@ -5218,7 +5264,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Dim_Customer">
+    design-time-name="Package\Data Flow Task\Dim_Product">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -5234,7 +5280,15 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Dim_Product">
+    design-time-name="Package\Data Flow Task\Dim_Customer">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Dim_Order">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
