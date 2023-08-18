@@ -1,6 +1,14 @@
-# Superstore Sales Analysis
-This repos is created to analyze dataset [Superstores Sales](https://www.kaggle.com/datasets/rohitsahoo/sales-forecasting)
+# [Superstore Sales Analysis](https://www.kaggle.com/datasets/rohitsahoo/sales-forecasting)
+This project forcused on Superstore Sales Analysis, involving various data processing and analysis step. Here is process overview:
 
-In this repos, I'll explore and analyze this dataset
+**Process Overview:**
+
+1. Data Cleaning in VS Code
+2. ETL Data by SSIS
 
 
+**Technologies Used**
+- VS Code ( Jupyter notebook)
+- Visual Studio
+- SQL Sever
+- Excel
